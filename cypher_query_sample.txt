@@ -38,3 +38,19 @@ WITH p, j, COUNT(s) AS matched_skill_count, COLLECT(s.name) AS matched_skills
 ORDER BY p.person_id, matched_skill_count DESC
 WITH p, COLLECT({job: j.title, matched_skill_count: matched_skill_count, matched_skills: matched_skills}) AS job_recommendations
 RETURN p.person_id, p.name, job_recommendations[0..3] AS top_jobs
+
+MATCH (p:Person)-[:HAS_SKILL]->(s:Skill)<-[:REQUIRES]-(j:Job)
+WITH p, s, collect(j)[0] AS oneJob
+RETURN p, s, oneJob
+LIMIT 10;
+
+MATCH (p:Person)
+WHERE p.name STARTS WITH "A"
+WITH p
+MATCH (p)-[:HAS_SKILL]->(s:Skill)<-[:REQUIRES]-(j:Job)
+WITH p, j, count(s) AS matchedSkills
+ORDER BY matchedSkills DESC
+WITH p, collect(j)[0] AS bestJob
+MATCH (p)-[:HAS_SKILL]->(s:Skill)
+MATCH (bestJob)-[:REQUIRES]->(s)
+RETURN p, s, bestJob
