@@ -33,39 +33,6 @@ This project is a lightweight, open-source job recommendation system that levera
 
 ---
 
-## 🗂️ Project Structure
-
-├── scripts/
-│   ├── extract_profile_skills.py
-│   ├── extract_skills.py
-│   ├── generate_job_skill_edges.py
-│   ├── generate_person_and_edges.py
-│   ├── import_to_neo4j.py
-│   ├── get_recommendation.py
-│   └── get_recommendation_to_csv.py
-├── data/
-│   ├── raw/
-│   │   ├── LinkedIn people profiles datasets.csv
-│   │   └── postings.csv
-│   └── processed/
-│       ├── profiles_with_skills.csv
-│       ├── postings_with_skills.csv
-│       ├── people.csv
-│       ├── jobs.csv
-│       ├── skills.csv
-│       ├── person_has_skill.csv
-│       └── job_requires_skill.csv
-├── graph/
-│   └── skills_list.txt
-├── output/
-│   └── job_recommendations.csv
-├── assets/
-│   └── Architecture.svg
-└── README.md
-
-
----
-
 # 🚀 How to Run
 
 1. Clone this repository
@@ -92,17 +59,17 @@ URL: bolt://localhost:7687
 Username: nodes2025
 Password: ihsanifan
 ```
-
+v
 4. Run the scripts
 Make sure your working directory contains `postings.csv` and `LinkedIn people profiles datasets.csv`
 
 ```
-python extract_profile_skills.py
-python generate_person_and_edges.py
-python extract_skills.py
-python generate_job_skill_edges.py
-python import_to_neo4j.py
-python get_recommendation.py
+python scripts/extract_profile_skills.py
+python scripts/generate_person_and_edges.py
+python scripts/extract_skills.py
+python scripts/generate_job_skill_edges.py
+python scripts/import_to_neo4j.py
+python scripts/get_recommendation.py
 ```
 
 # 📈 Example Output
