@@ -14,7 +14,7 @@ RETURN s.name AS skill, count(*) AS count
 ORDER BY count DESC
 LIMIT 20;
 
-// Banyak diminta
+// High-demand job
 MATCH (:Job)-[:REQUIRES]->(s:Skill)
 WITH s.name AS skill, count(*) AS demand
 ORDER BY demand DESC
@@ -26,6 +26,7 @@ RETURN skill, demand, supply, demand - supply AS gap
 ORDER BY gap DESC
 LIMIT 20;
 
+// Specific skill
 MATCH (j:Job)-[:REQUIRES]->(s:Skill {name: "sql"})
 RETURN j.title
 LIMIT 20;
@@ -44,6 +45,7 @@ WITH p, s, collect(j)[0] AS oneJob
 RETURN p, s, oneJob
 LIMIT 10;
 
+// All person starts with letter 'A'
 MATCH (p:Person)
 WHERE p.name STARTS WITH "A"
 WITH p
@@ -54,3 +56,15 @@ WITH p, collect(j)[0] AS bestJob
 MATCH (p)-[:HAS_SKILL]->(s:Skill)
 MATCH (bestJob)-[:REQUIRES]->(s)
 RETURN p, s, bestJob
+
+// Specific person
+MATCH (p:Person {name: "Christian Zerial"})-[:HAS_SKILL]->(s:Skill)
+MATCH (j:Job)-[:REQUIRES]->(s)
+WITH p, s, j, count(s) AS matchedSkills
+ORDER BY matchedSkills DESC
+WITH p, collect(DISTINCT j)[..5] AS topJobs, collect(DISTINCT s) AS personSkills
+UNWIND topJobs AS job
+UNWIND personSkills AS skill
+OPTIONAL MATCH (job)-[r:REQUIRES]->(skill)
+OPTIONAL MATCH (p)-[r2:HAS_SKILL]->(skill)
+RETURN p, job, skill, r, r2
