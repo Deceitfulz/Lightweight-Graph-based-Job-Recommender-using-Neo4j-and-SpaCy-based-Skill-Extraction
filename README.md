@@ -80,8 +80,13 @@ Sample format from `job_recommendations.csv`:
 | benchalh-othmane-95925470           | BENCHALH Othmane                       | Senior Software Engineer - MFT | sql, communication, html, javascript, css, mysql|
 
 Sample output from `cypher_query_sample.txt`
+- All person starts with letter 'A'
 
 ![Graph Example](assets/Graph_example.svg)
+
+- Spesific person (example: Christian Zerial)
+
+![Graph Example](assets/Graph_example_spesific.svg)
 
 # 📄 Dataset Source
 - LinkedIn Job Posting Dataset (Kaggle)
@@ -90,8 +95,21 @@ https://www.kaggle.com/datasets/arshkon/linkedin-job-postings?select=postings.cs
 - LinkedIn People Profiles Dataset (Kaggle)
 https://www.kaggle.com/datasets/manishkumar7432698/linkedinuserprofiles?select=LinkedIn+people+profiles+datasets.csv
 
+# 💎 Simple UI
+
+Check out our simple UI that can be accessed from `app.py`
+
+Run it with command:
+```
+streamlit app.py
+```
+
+![Graph Example](assets/streamlit_ui.png)
+
+
 # 🤝 Acknowledgements
 - spaCy
 - Neo4j
+- Streamlit
 
 Inspired by lightweight AI engineering and graph-based solutions for talent matching.
