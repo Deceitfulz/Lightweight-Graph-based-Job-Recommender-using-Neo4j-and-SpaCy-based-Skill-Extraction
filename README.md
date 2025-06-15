@@ -101,7 +101,7 @@ Check out our simple UI that can be accessed from `app.py`
 
 Run it with command:
 ```
-streamlit app.py
+streamlit run app.py
 ```
 
 ![Streamlit UI](assets/streamlit_ui.png)
