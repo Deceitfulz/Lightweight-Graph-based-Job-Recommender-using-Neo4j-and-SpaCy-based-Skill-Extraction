@@ -27,25 +27,35 @@ This project is a lightweight, open-source job recommendation system that levera
 
 ---
 
+## 🧠 System Architecture
+
+![System Architecture](./Architecture.svg)
+
+---
+
 ## 🗂️ Project Structure
 
-├── extract_profile_skills.py # Extracts skills from LinkedIn profile data
-├── extract_skills.py # NLP logic using spaCy
-├── generate_job_skill_edges.py # Creates job-skill edges
-├── generate_person_and_edges.py # Creates person nodes and their skill links
-├── get_recommendation.py # Neo4j Cypher query to recommend jobs
-├── get_recommendation_to_csv.py # Writes recommendation result to CSV
-├── import_to_neo4j.py # Pushes nodes and edges to Neo4j
-├── jobs.csv # Cleaned job postings
-├── people.csv # Cleaned profile data
-├── skills.csv # Unique extracted skills
-├── person_has_skill.csv # Edges: Person -> Skill
-├── job_requires_skill.csv # Edges: Job -> Skill
-├── job_recommendations.csv # Output recommendation result
-├── postings_with_skills.csv # Job postings with extracted skills
-├── profiles_with_skills.csv # Profiles with extracted skills
-├── skills_list.txt # Skill keyword reference
-├── README.md # Project documentation
+.
+├── extract_profile_skills.py         # Extract skills from LinkedIn profiles
+├── extract_skills.py                 # Extract skills from job postings
+├── generate_person_and_edges.py      # Generate Person nodes and HAS_SKILL edges
+├── generate_job_skill_edges.py       # Generate Job nodes and REQUIRES_SKILL edges
+├── import_to_neo4j.py                # Import all nodes and edges into Neo4j
+├── get_recommendation.py             # Run Cypher queries to get recommendations
+├── get_recommendation_to_csv.py      # Export recommendations to CSV
+
+├── jobs.csv                          # Cleaned job postings
+├── people.csv                        # Cleaned profile data
+├── skills.csv                        # Unique extracted skills
+├── person_has_skill.csv              # Edges: Person → Skill
+├── job_requires_skill.csv            # Edges: Job → Skill
+├── job_recommendations.csv           # Output: Job recommendations per person
+
+├── postings_with_skills.csv          # Job postings with extracted skills
+├── profiles_with_skills.csv          # LinkedIn profiles with extracted skills
+├── skills_list.txt                   # Skill keyword reference list
+├── Architecture.svg                  # System architecture diagram
+└── README.md                         # Project documentation
 
 
 ---
