@@ -1,4 +1,4 @@
-# Lightweight Graph-based Job Recommender using Neo4j and SpaCy-based Skill Extraction
+# Lightweight Graph-based Job Recommender using Neo4j and spaCy-based Skill Extraction
 
 This project is a lightweight, open-source job recommendation system that leverages graph-based modeling in Neo4j and natural language processing using spaCy to extract skills from user profiles and job postings. It aims to deliver efficient job recommendations by modeling relationships between people, skills, and jobs as a graph.
 
