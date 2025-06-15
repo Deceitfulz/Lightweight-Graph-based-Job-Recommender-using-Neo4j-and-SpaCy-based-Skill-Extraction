@@ -6,7 +6,7 @@ from tqdm import tqdm
 nlp = spacy.load("en_core_web_sm")
 
 # Load daftar skill
-with open("skills_list.txt", "r", encoding="utf-8") as f:
+with open("graph/skills_list.txt", "r", encoding="utf-8") as f:
     skills = set([line.strip().lower() for line in f if line.strip() and not line.startswith("#")])
 
 # Load dataset profil
