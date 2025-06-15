@@ -104,7 +104,7 @@ Run it with command:
 streamlit app.py
 ```
 
-![Graph Example](assets/streamlit_ui.png)
+![Streamlit UI](assets/streamlit_ui.png)
 
 
 # 🤝 Acknowledgements
