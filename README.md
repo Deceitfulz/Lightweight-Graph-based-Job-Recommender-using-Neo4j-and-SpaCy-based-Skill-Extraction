@@ -59,9 +59,8 @@ URL: bolt://localhost:7687
 Username: nodes2025
 Password: ihsanifan
 ```
-v
+
 4. Run the scripts
-Make sure your working directory contains `postings.csv` and `LinkedIn people profiles datasets.csv`
 
 ```
 python scripts/extract_profile_skills.py
