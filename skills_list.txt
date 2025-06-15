@@ -1,0 +1,116 @@
+# Programming Languages
+python
+java
+javascript
+typescript
+c++
+c#
+go
+r
+sql
+scala
+html
+css
+bash
+shell scripting
+
+# Data Science & Machine Learning
+machine learning
+deep learning
+data analysis
+data visualization
+data mining
+predictive modeling
+natural language processing
+computer vision
+recommendation systems
+classification
+regression
+clustering
+nlp
+pytorch
+tensorflow
+keras
+scikit-learn
+xgboost
+lightgbm
+pandas
+numpy
+matplotlib
+seaborn
+statsmodels
+
+# Cloud & DevOps
+aws
+azure
+gcp
+google cloud
+cloud computing
+docker
+kubernetes
+terraform
+jenkins
+linux
+devops
+ci/cd
+git
+github
+bitbucket
+
+# Tools & Platforms
+power bi
+tableau
+excel
+bigquery
+snowflake
+airflow
+hadoop
+spark
+databricks
+mysql
+postgresql
+mongodb
+neo4j
+cassandra
+superset
+notion
+jupyter notebook
+visual studio code
+pycharm
+anaconda
+rest api
+graphql
+
+# Soft Skills
+communication
+leadership
+project management
+teamwork
+critical thinking
+problem solving
+time management
+adaptability
+collaboration
+attention to detail
+analytical thinking
+creativity
+fast learner
+decision making
+multitasking
+
+# Business & Domain Knowledge
+business intelligence
+etl
+crm
+erp
+sap
+sql server
+supply chain
+finance
+marketing analytics
+product management
+data governance
+data warehousing
+customer service
+operations research
+quality assurance

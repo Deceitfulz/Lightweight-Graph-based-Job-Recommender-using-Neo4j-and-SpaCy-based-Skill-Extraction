@@ -1,0 +1,40 @@
+MATCH (n) RETURN DISTINCT labels(n), count(*) ORDER BY count(*) DESC;
+
+MATCH (p:Person)-[:HAS_SKILL]->(s:Skill)<-[:REQUIRES]-(j:Job)
+RETURN p, s, j
+LIMIT 50;
+
+MATCH (:Person)-[:HAS_SKILL]->(s:Skill)
+RETURN s.name AS skill, count(*) AS count
+ORDER BY count DESC
+LIMIT 20;
+
+MATCH (:Job)-[:REQUIRES]->(s:Skill)
+RETURN s.name AS skill, count(*) AS count
+ORDER BY count DESC
+LIMIT 20;
+
+// Banyak diminta
+MATCH (:Job)-[:REQUIRES]->(s:Skill)
+WITH s.name AS skill, count(*) AS demand
+ORDER BY demand DESC
+LIMIT 100
+MATCH (:Person)-[:HAS_SKILL]->(s2:Skill)
+WHERE s2.name = skill
+WITH skill, demand, count(*) AS supply
+RETURN skill, demand, supply, demand - supply AS gap
+ORDER BY gap DESC
+LIMIT 20;
+
+MATCH (j:Job)-[:REQUIRES]->(s:Skill {name: "sql"})
+RETURN j.title
+LIMIT 20;
+
+MATCH (p:Person)-[:HAS_SKILL]->(s:Skill)
+WITH p LIMIT 10
+MATCH (p)-[:HAS_SKILL]->(s:Skill)
+MATCH (j:Job)-[:REQUIRES]->(s)
+WITH p, j, COUNT(s) AS matched_skill_count, COLLECT(s.name) AS matched_skills
+ORDER BY p.person_id, matched_skill_count DESC
+WITH p, COLLECT({job: j.title, matched_skill_count: matched_skill_count, matched_skills: matched_skills}) AS job_recommendations
+RETURN p.person_id, p.name, job_recommendations[0..3] AS top_jobs
