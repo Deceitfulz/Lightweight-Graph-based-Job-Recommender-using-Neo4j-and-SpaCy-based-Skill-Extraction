@@ -29,33 +29,39 @@ This project is a lightweight, open-source job recommendation system that levera
 
 ## 🧠 System Architecture
 
-![System Architecture](./Architecture.svg)
+![System Architecture](assets/Architecture.svg)
 
 ---
 
 ## 🗂️ Project Structure
 
-.
-├── extract_profile_skills.py         # Extract skills from LinkedIn profiles
-├── extract_skills.py                 # Extract skills from job postings
-├── generate_person_and_edges.py      # Generate Person nodes and HAS_SKILL edges
-├── generate_job_skill_edges.py       # Generate Job nodes and REQUIRES_SKILL edges
-├── import_to_neo4j.py                # Import all nodes and edges into Neo4j
-├── get_recommendation.py             # Run Cypher queries to get recommendations
-├── get_recommendation_to_csv.py      # Export recommendations to CSV
-
-├── jobs.csv                          # Cleaned job postings
-├── people.csv                        # Cleaned profile data
-├── skills.csv                        # Unique extracted skills
-├── person_has_skill.csv              # Edges: Person → Skill
-├── job_requires_skill.csv            # Edges: Job → Skill
-├── job_recommendations.csv           # Output: Job recommendations per person
-
-├── postings_with_skills.csv          # Job postings with extracted skills
-├── profiles_with_skills.csv          # LinkedIn profiles with extracted skills
-├── skills_list.txt                   # Skill keyword reference list
-├── Architecture.svg                  # System architecture diagram
-└── README.md                         # Project documentation
+├── scripts/
+│   ├── extract_profile_skills.py
+│   ├── extract_skills.py
+│   ├── generate_job_skill_edges.py
+│   ├── generate_person_and_edges.py
+│   ├── import_to_neo4j.py
+│   ├── get_recommendation.py
+│   └── get_recommendation_to_csv.py
+├── data/
+│   ├── raw/
+│   │   ├── LinkedIn people profiles datasets.csv
+│   │   └── postings.csv
+│   └── processed/
+│       ├── profiles_with_skills.csv
+│       ├── postings_with_skills.csv
+│       ├── people.csv
+│       ├── jobs.csv
+│       ├── skills.csv
+│       ├── person_has_skill.csv
+│       └── job_requires_skill.csv
+├── graph/
+│   └── skills_list.txt
+├── output/
+│   └── job_recommendations.csv
+├── assets/
+│   └── Architecture.svg
+└── README.md
 
 
 ---

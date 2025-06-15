@@ -23,7 +23,7 @@ def get_recommendations(tx, person_id):
 
 def recommend_and_save():
     # Ambil hanya 10 orang pertama
-    people_df = pd.read_csv("profiles_with_skills.csv")
+    people_df = pd.read_csv("data/processed/profiles_with_skills.csv")
     results = []
 
     with driver.session() as session:
@@ -50,7 +50,7 @@ def recommend_and_save():
 
     # Simpan ke CSV
     output_df = pd.DataFrame(results)
-    output_df.to_csv("job_recommendations.csv", index=False)
+    output_df.to_csv("output/job_recommendations.csv", index=False)
     print("✅ Rekomendasi disimpan ke job_recommendations.csv")
 
 if __name__ == "__main__":

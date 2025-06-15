@@ -10,8 +10,6 @@ NEO4J_PASSWORD = "ihsanifan"
 # Koneksi
 driver = GraphDatabase.driver(NEO4J_URL, auth=(NEO4J_USERNAME, NEO4J_PASSWORD))
 
-# --- Optional: masih disimpan jika butuh remake node di masa depan ---
-
 def create_job_nodes(tx, jobs_df):
     for _, row in jobs_df.iterrows():
         tx.run("""
@@ -27,8 +25,6 @@ def create_skill_nodes(tx, skill_list):
         tx.run("""
             MERGE (s:Skill {name: $name})
         """, {"name": skill})
-
-# --- Wajib: buat Person dan relasi-relasinya ---
 
 def create_person_nodes(tx, people_df):
     for _, row in people_df.iterrows():
@@ -66,9 +62,9 @@ def create_person_skill_edges(tx, people_df):
 
 def main():
     print("📦 Membaca data CSV...")
-    jobs_df = pd.read_csv("postings_with_skills.csv")
-    people_df = pd.read_csv("profiles_with_skills.csv")
-    job_skill_df = pd.read_csv("job_requires_skill.csv")
+    jobs_df = pd.read_csv("data/processed/postings_with_skills.csv")
+    people_df = pd.read_csv("data/processed/profiles_with_skills.csv")
+    job_skill_df = pd.read_csv("data/processed/job_requires_skill.csv")
 
     # Ambil daftar skill unik dari job dan people
     skill_from_jobs = set(job_skill_df["skill"].dropna().unique())
@@ -78,11 +74,11 @@ def main():
     all_skills = skill_from_jobs.union(skill_from_people)
 
     with driver.session() as session:
-        # print("🧠 Membuat node Skill...")
-        # session.execute_write(create_skill_nodes, all_skills)
+        print("🧠 Membuat node Skill...")
+        session.execute_write(create_skill_nodes, all_skills)
 
-        # print("🧠 Membuat node Job...")
-        # session.execute_write(create_job_nodes, jobs_df)
+        print("🧠 Membuat node Job...")
+        session.execute_write(create_job_nodes, jobs_df)
 
         print("🧠 Membuat node Person...")
         session.execute_write(create_person_nodes, people_df)

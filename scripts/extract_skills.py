@@ -10,7 +10,7 @@ with open("skills_list.txt", "r", encoding="utf-8") as f:
     skills = set([line.strip().lower() for line in f if line.strip() and not line.startswith("#")])
 
 # Load dataset
-df = pd.read_csv("D:/Kuliah/Sem8/Graph/NODES 2025/data/postings.csv")
+df = pd.read_csv("data/raw/postings.csv")
 
 # Ambil kolom description saja
 job_descriptions = df["description"].fillna("").astype(str)
@@ -40,5 +40,5 @@ for i, desc in enumerate(tqdm(job_descriptions, total=len(job_descriptions))):
 df["extracted_skills"] = extracted_skills
 
 # Simpan hasil
-df.to_csv("postings_with_skills.csv", index=False)
+df.to_csv("data/processed/postings_with_skills.csv", index=False)
 print("✅ Selesai! Hasil disimpan ke postings_with_skills.csv")

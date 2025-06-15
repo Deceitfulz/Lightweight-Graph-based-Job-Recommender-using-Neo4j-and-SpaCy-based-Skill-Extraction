@@ -23,7 +23,7 @@ def get_recommendations(tx, person_id):
 
 def recommend_and_print():
     # Ambil hanya 10 orang pertama
-    people_df = pd.read_csv("profiles_with_skills.csv").head(10)
+    people_df = pd.read_csv("data/processed/profiles_with_skills.csv").head(10)
 
     with driver.session() as session:
         for i, row in people_df.iterrows():
