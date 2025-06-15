@@ -7,7 +7,7 @@ This project is a lightweight, open-source job recommendation system that levera
 ## 📌 Features
 
 - Skill extraction from LinkedIn profiles and job descriptions using spaCy
-- Graph construction in Neo4j: `Person`, `Job`, and `Skill` nodes with relationships like `HAS_SKILL`, `REQUIRES_SKILL`, and `RECOMMENDED_FOR`
+- Graph construction in Neo4j: `Person`, `Job`, and `Skill` nodes with relationships like `HAS_SKILL` and `REQUIRES`
 - Querying job recommendations through Neo4j Cypher
 - Lightweight, local-first, and LLM-free
 - Open-source and reproducible using CSV data
