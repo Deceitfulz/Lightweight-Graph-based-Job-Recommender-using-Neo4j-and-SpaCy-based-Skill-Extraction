@@ -79,7 +79,9 @@ Sample format from `job_recommendations.csv`:
 | margot-bon-51a04624   |      Margot Bon           | Senior Elder Law / Trusts and Estates Associate Attorney | communication |
 | benchalh-othmane-95925470           | BENCHALH Othmane                       | Senior Software Engineer - MFT | sql, communication, html, javascript, css, mysql|
 
+Sample output from `cypher_query_sample.txt`
 
+![Graph Example](assets/Graph_example.svg)
 
 # 📄 Dataset Source
 - LinkedIn Job Posting Dataset (Kaggle)
@@ -93,4 +95,3 @@ https://www.kaggle.com/datasets/manishkumar7432698/linkedinuserprofiles?select=L
 - Neo4j
 
 Inspired by lightweight AI engineering and graph-based solutions for talent matching.
-
