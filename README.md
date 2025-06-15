@@ -75,10 +75,10 @@ python scripts/get_recommendation.py
 # 📈 Example Output
 Sample format from `job_recommendations.csv`:
 
-| Person Name | Recommended Job Title | Score |
-|---------------|-----------------------------| - |
-| John Doe   | Data Engineer at ABC Tech                | 0.85 |
-| Jane Smith           | Python Developer at XYZ                       | 0.78 |
+| Person ID | Person Name | Recommended Job Title | Matched Skill |
+|---------------|-----------------------------| - | - |
+| margot-bon-51a04624   |      Margot Bon           | Senior Elder Law / Trusts and Estates Associate Attorney | communication |
+| benchalh-othmane-95925470           | BENCHALH Othmane                       | Senior Software Engineer - MFT | sql, communication, html, javascript, css, mysql|
 
 
 
