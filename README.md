@@ -39,7 +39,7 @@ This project is a lightweight, open-source job recommendation system that levera
 
 ```
 git clone https://github.com/Deceitfulz/Lightweight-Graph-based-Job-Recommender-using-Neo4j-and-SpaCy-based-Skill-Extraction.git
-cd graph-job-recommender
+cd Lightweight-Graph-based-Job-Recommender-using-Neo4j-and-SpaCy-based-Skill-Extraction
 ```
 
 2. Install dependencies
